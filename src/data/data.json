@@ -26,7 +26,8 @@
         "precipitation": 0.0,
         "weather_code": 3,
         "cloud_cover": 96,
-        "wind_speed_10m": 12.7
+        "wind_speed_10m": 12.7,
+        "is_day": 1
     },
     "hourly_units": {
         "time": "iso8601",
