@@ -1,7 +1,12 @@
 import { Box, Typography } from '@mui/material';
 import ThermostatIcon from '@mui/icons-material/Thermostat';
+import { useContext } from 'react';
+import { WeatherContext } from 'context/WeatherContext';
 
-function Temperature({ temp, unit }) {
+function Temperature() {
+    const {
+        weatherData: { current, current_units },
+    } = useContext(WeatherContext);
     return (
         <Box
             sx={{
@@ -21,7 +26,9 @@ function Temperature({ temp, unit }) {
                 <ThermostatIcon />
                 <Typography>Real Feel</Typography>
             </Box>
-            <Box sx={{ margin: 'auto' }}>{`${temp} ${unit}`}</Box>
+            <Box
+                sx={{ margin: 'auto' }}
+            >{`${current.apparent_temperature} ${current_units.apparent_temperature}`}</Box>
         </Box>
     );
 }

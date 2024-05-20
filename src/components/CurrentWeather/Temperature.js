@@ -1,8 +1,14 @@
 import { Box } from '@mui/material';
 import { getWeatherDescription } from 'utils/getWeatherInfo';
+import { useContext } from 'react';
+import { WeatherContext } from 'context/WeatherContext';
 
-function Temperature({ temp, code, isDay }) {
-    const weatherDescription = getWeatherDescription(code);
+function Temperature() {
+    const {
+        weatherData: { current },
+    } = useContext(WeatherContext);
+
+    const weatherDescription = getWeatherDescription(current.weather_code, current.is_day);
 
     return (
         <Box
@@ -12,7 +18,7 @@ function Temperature({ temp, code, isDay }) {
                 justifyContent: 'space-evenly',
             }}
         >
-            <Box>{temp}</Box>
+            <Box>{current.temperature_2m}</Box>
             <Box>{weatherDescription}</Box>
         </Box>
     );

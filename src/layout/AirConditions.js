@@ -4,7 +4,7 @@ import WindSpeed from 'components/AirConditions/WindSpeed';
 import CloudCover from 'components/AirConditions/CloudCover';
 import Humidity from 'components/AirConditions/Humidity';
 
-function AirConditions({ data, units }) {
+function AirConditions() {
     return (
         <Box
             sx={{
@@ -23,10 +23,10 @@ function AirConditions({ data, units }) {
                     width: '100%',
                 }}
             >
-                <ApparentTemp temp={data.apparent_temperature} unit={units.apparent_temperature} />
-                <WindSpeed speed={data.wind_speed_10m} unit={units.wind_speed_10m} />
-                <CloudCover clouds={data.cloud_cover} unit={units.cloud_cover} />
-                <Humidity percentage={data.relative_humidity_2m} unit={units.relative_humidity_2m} />
+                <ApparentTemp />
+                <WindSpeed />
+                <CloudCover />
+                <Humidity />
             </Box>
         </Box>
     );

@@ -1,7 +1,12 @@
 import { Box, Typography } from '@mui/material';
 import CloudQueueIcon from '@mui/icons-material/CloudQueue';
+import { useContext } from 'react';
+import { WeatherContext } from 'context/WeatherContext';
 
-function CloudCover({ clouds, unit }) {
+function CloudCover() {
+    const {
+        weatherData: { current, current_units },
+    } = useContext(WeatherContext);
     return (
         <Box
             sx={{
@@ -21,7 +26,9 @@ function CloudCover({ clouds, unit }) {
                 <CloudQueueIcon />
                 <Typography>Clouds</Typography>
             </Box>
-            <Box sx={{ margin: 'auto' }}>{`${clouds} ${unit}`}</Box>
+            <Box
+                sx={{ margin: 'auto' }}
+            >{`${current.cloud_cover} ${current_units.cloud_cover}`}</Box>
         </Box>
     );
 }

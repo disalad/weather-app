@@ -4,8 +4,8 @@ import { getWeatherImage } from 'utils/getWeatherInfo';
 import TodayTemperature from './TodayTemperature';
 import TodayPrecipitation from './TodayPrecipitation';
 
-function ForecastItem({ time, temp, precipitation, weather_code: code, units }) {
-    const iconUrl = getWeatherImage(code, 1);
+function ForecastItem({ time, temp, precipitation, weather_code }) {
+    const iconUrl = getWeatherImage(weather_code, 1);
     return (
         <Card sx={{ p: 2 }}>
             <Box
@@ -17,8 +17,8 @@ function ForecastItem({ time, temp, precipitation, weather_code: code, units }) 
             >
                 <Typography component='h3'>{timestampToTime(time)}</Typography>
                 <img src={iconUrl} alt='' />
-                <TodayTemperature temp={temp} unit={units.temperature_2m} />
-                <TodayPrecipitation perc={precipitation} unit={units.precipitation_probability} />
+                <TodayTemperature temp={temp} />
+                <TodayPrecipitation perc={precipitation} />
             </Box>
         </Card>
     );

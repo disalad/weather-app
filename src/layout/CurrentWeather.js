@@ -3,7 +3,7 @@ import TimeZone from 'components/CurrentWeather/TimeZone';
 import Temperature from 'components/CurrentWeather/Temperature';
 import WeatherIcon from 'components/CurrentWeather/WeatherIcon';
 
-function CurrentWeather({ data, timezone }) {
+function CurrentWeather() {
     return (
         <Box
             sx={{
@@ -22,13 +22,9 @@ function CurrentWeather({ data, timezone }) {
                     width: '100%',
                 }}
             >
-                <TimeZone timezone={timezone} date={data.time} />
-                <Temperature
-                    temp={data.temperature_2m}
-                    code={data.weather_code}
-                    isDay={data.is_day}
-                />
-                <WeatherIcon code={data.weather_code} isDay={data.is_day} />
+                <TimeZone />
+                <Temperature />
+                <WeatherIcon />
             </Box>
         </Box>
     );

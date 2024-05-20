@@ -1,7 +1,13 @@
 import { Box, Typography } from '@mui/material';
 import ForecastItem from 'components/TodayForecast/ForecastItem';
+import { useContext } from 'react';
+import { WeatherContext } from 'context/WeatherContext';
 
-function TodayForecast({ data: hourlyData, units }) {
+function TodayForecast() {
+    const {
+        weatherData: { hourly },
+    } = useContext(WeatherContext);
+
     return (
         <Box
             sx={{
@@ -10,7 +16,7 @@ function TodayForecast({ data: hourlyData, units }) {
                 alignItems: 'center',
             }}
         >
-            <Typography element='h2'>Today's Forecast</Typography>
+            <Typography element='h2'>Today&#39;s Forecast</Typography>
             <Box
                 sx={{
                     display: 'flex',
@@ -19,17 +25,17 @@ function TodayForecast({ data: hourlyData, units }) {
                     width: '100%',
                 }}
             >
-                {hourlyData.time.map((time, index) => {
-                    const temp = hourlyData.temperature_2m[index];
-                    const precipitation = hourlyData.precipitation_probability[index];
-                    const weather_code = hourlyData.weather_code[index];
+                {hourly.time.map((time, index) => {
+                    const temp = hourly.temperature_2m[index];
+                    const precipitation = hourly.precipitation_probability[index];
+                    const weather_code = hourly.weather_code[index];
                     return (
                         <ForecastItem
                             time={time}
                             temp={temp}
                             precipitation={precipitation}
                             weather_code={weather_code}
-                            units={units}
+                            key={index}
                         />
                     );
                 })}
