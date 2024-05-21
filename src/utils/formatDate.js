@@ -37,3 +37,19 @@ export function timestampToTime(isoString) {
     const minutes = String(date.getUTCMinutes()).padStart(2, '0');
     return `${hours}:${minutes}`;
 }
+
+export function getDayOfWeek(timestamp) {
+    const date = new Date(timestamp);
+    const dayOfWeek = date.getDay();
+    const daysOfWeek = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+    ];
+
+    return daysOfWeek[dayOfWeek];
+}
