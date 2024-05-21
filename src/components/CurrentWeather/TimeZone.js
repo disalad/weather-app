@@ -5,7 +5,7 @@ import { WeatherContext } from 'context/WeatherContext';
 
 function TimeZone() {
     const {
-        weatherData: { current, timezone },
+        weatherData: { current, city },
     } = useContext(WeatherContext);
 
     const formattedDate = formatDate(current.time);
@@ -18,7 +18,7 @@ function TimeZone() {
                 justifyContent: 'space-evenly',
             }}
         >
-            <Box>{timezone}</Box>
+            <Box>{city}</Box>
             <Box>{formattedDate}</Box>
         </Box>
     );

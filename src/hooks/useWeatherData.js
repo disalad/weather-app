@@ -43,16 +43,25 @@ export function useWeatherData() {
         const res = await axios.get('http://ip-api.com/json');
         if (res.status === 200) {
             const locationData = res.data;
-            return { latitude: locationData?.lat, longitude: locationData?.lon };
+            console.warn(res.data);
+            return {
+                latitude: locationData?.lat,
+                longitude: locationData?.lon,
+                city: locationData?.city,
+            };
         }
     };
 
     const fetchData = async () => {
         try {
             setLoading(true);
-            const { latitude, longitude } = await getLocation();
+            const { latitude, longitude, city } = await getLocation();
             await setParameters(latitude, longitude);
             const response = await axios.get(apiUrl, { params });
+
+            // Set user's city to the weather data object
+            const data = response.data;
+            data.city = city;
             setWeatherData(response.data);
         } catch (err) {
             console.error(err);
