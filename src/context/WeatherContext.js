@@ -1,25 +1,10 @@
-import { createContext, useEffect, useState } from 'react';
-import data from 'api/OpenMeteo';
+import { createContext } from 'react';
+import { useWeatherData } from 'hooks/useWeatherData';
 
 export const WeatherContext = createContext();
 
 export function WeatherProvider({ children }) {
-    const [weatherData, setWeatherData] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    const fetchWeatherData = async () => {
-        try {
-            setWeatherData(data);
-            setLoading(false);
-        } catch (err) {
-            console.error(err.message);
-            setLoading(false);
-        }
-    };
-
-    useEffect(() => {
-        fetchWeatherData();
-    }, []);
+    const { weatherData, loading } = useWeatherData();
 
     return (
         <WeatherContext.Provider value={{ weatherData, loading }}>
