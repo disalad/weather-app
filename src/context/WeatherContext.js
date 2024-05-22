@@ -7,7 +7,7 @@ export function WeatherProvider({ children }) {
     const { weatherData, loading } = useWeatherData();
 
     return (
-        <WeatherContext.Provider value={{ weatherData, loading }}>
+        <WeatherContext.Provider value={{ weatherData, loading }} style={{ height: '100%' }}>
             {children}
         </WeatherContext.Provider>
     );
