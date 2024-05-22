@@ -1,11 +1,11 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { getWeatherDescription } from 'utils/getWeatherInfo';
 import { useContext } from 'react';
 import { WeatherContext } from 'context/WeatherContext';
 
 function Temperature() {
     const {
-        weatherData: { current },
+        weatherData: { current, current_units },
     } = useContext(WeatherContext);
 
     const weatherDescription = getWeatherDescription(current.weather_code, current.is_day);
@@ -18,8 +18,16 @@ function Temperature() {
                 justifyContent: 'space-evenly',
             }}
         >
-            <Box>{current.temperature_2m}</Box>
-            <Box>{weatherDescription}</Box>
+            <Typography
+                variant='h3'
+                sx={{
+                    fontWeight: '700',
+                    textTransform: 'uppercase',
+                    lineHeight: 1,
+                    marginBottom: '0.5rem',
+                }}
+            >{`${current.temperature_2m}${current_units.temperature_2m}`}</Typography>
+            <Typography variant='h4'>{weatherDescription}</Typography>
         </Box>
     );
 }

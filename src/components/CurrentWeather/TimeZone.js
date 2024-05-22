@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { formatDate } from 'utils/formatDate';
 import { useContext } from 'react';
 import { WeatherContext } from 'context/WeatherContext';
@@ -18,8 +18,18 @@ function TimeZone() {
                 justifyContent: 'space-evenly',
             }}
         >
-            <Box>{city}</Box>
-            <Box>{formattedDate}</Box>
+            <Typography
+                variant='h3'
+                sx={{
+                    fontWeight: '700',
+                    textTransform: 'uppercase',
+                    lineHeight: 1,
+                    marginBottom: '0.5rem',
+                }}
+            >
+                {city}
+            </Typography>
+            <Typography variant='h4'>{formattedDate}</Typography>
         </Box>
     );
 }

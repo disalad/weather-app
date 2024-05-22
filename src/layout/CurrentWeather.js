@@ -1,7 +1,24 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import TimeZone from 'components/CurrentWeather/TimeZone';
 import Temperature from 'components/CurrentWeather/Temperature';
 import WeatherIcon from 'components/CurrentWeather/WeatherIcon';
+
+const StyledGridItem = ({ children }) => (
+    <Grid item xs={4}>
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                height: '100%',
+            }}
+        >
+            {children}
+        </Box>
+    </Grid>
+);
 
 function CurrentWeather() {
     return (
@@ -12,20 +29,26 @@ function CurrentWeather() {
                 alignItems: 'center',
             }}
         >
-            <Typography element='h2'>Current Weather</Typography>
-            <Box
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'space-evenly',
-                    p: 1,
-                    m: 1,
-                    width: '100%',
-                }}
-            >
-                <TimeZone />
-                <Temperature />
-                <WeatherIcon />
-            </Box>
+            <Grid container spacing={2}>
+                <Grid item xs={12}>
+                    <Typography variant='h2' sx={{ textAlign: 'center' }}>
+                        CURRENT WEATHER
+                    </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    <Grid container spacing={2}>
+                        <StyledGridItem>
+                            <TimeZone />
+                        </StyledGridItem>
+                        <StyledGridItem>
+                            <Temperature />
+                        </StyledGridItem>
+                        <StyledGridItem>
+                            <WeatherIcon />
+                        </StyledGridItem>
+                    </Grid>
+                </Grid>
+            </Grid>
         </Box>
     );
 }
