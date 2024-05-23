@@ -9,9 +9,18 @@ function DailyApparentTemperature({ temp }) {
     } = useContext(WeatherContext);
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: { xs: '3px', sm: '4px', md: '6px' },
+                width: '100%',
+            }}
+        >
             <WbSunnyIcon />
-            <Typography>{`${temp} ${daily_units.apparent_temperature_max}`}</Typography>
+            <Typography variant='h4'>{`${temp} ${daily_units.apparent_temperature_max}`}</Typography>
         </Box>
     );
 }

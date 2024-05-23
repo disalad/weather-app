@@ -22,6 +22,15 @@ const theme = createTheme({
         },
     },
     spacing: 0,
+    components: {
+        MuiSvgIcon: {
+            styleOverrides: {
+                root: {
+                    fontSize: '1.2em',
+                },
+            },
+        },
+    },
 });
 
 export default theme;

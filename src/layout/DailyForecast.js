@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Typography, Grid } from '@mui/material';
 import DailyForecastItem from 'components/DailyForecast/DailyForecastItem';
 import { useContext } from 'react';
 import { WeatherContext } from 'context/WeatherContext';
@@ -10,22 +10,28 @@ function DailyForecast() {
     console.log(daily.time);
 
     return (
-        <Box
+        <Grid
+            container
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
             }}
         >
-            <Typography element='h2'>Weekly Forecast</Typography>
-            <Box
+            <Typography variant='h2' element='h2' sx={{ margin: '0 0 0.8rem' }}>
+                DAILY FORECAST
+            </Typography>
+            <Grid
+                container
+                xs={12}
                 sx={{
                     display: 'flex',
-                    justifyContent: 'flex-start',
-                    alignItems: 'stretch',
+                    justifyContent: 'center',
                     flexDirection: 'column',
                     width: '100%',
+                    paddingRight: '2rem',
                 }}
+                gap='0.2rem'
             >
                 {daily.time.map((time, index) => {
                     const temp = daily.temperature_2m_max[index];
@@ -45,8 +51,8 @@ function DailyForecast() {
                         />
                     );
                 })}
-            </Box>
-        </Box>
+            </Grid>
+        </Grid>
     );
 }
 

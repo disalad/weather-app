@@ -8,9 +8,21 @@ function DailyTemperature({ temp }) {
         weatherData: { daily_units },
     } = useContext(WeatherContext);
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+        <Box
+            sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'row',
+                gap: { xs: '3px', sm: '4px', md: '6px' },
+                width: '100%',
+            }}
+        >
             <ThermostatIcon />
-            <Typography>{`${temp} ${daily_units.temperature_2m_max}`}</Typography>
+            <Typography
+                variant='h4'
+                sx={{ fontWeight: { xs: '400', sm: '500' }, marginRight: '0.5rem' }}
+            >{`${temp} ${daily_units.temperature_2m_max}`}</Typography>
         </Box>
     );
 }
