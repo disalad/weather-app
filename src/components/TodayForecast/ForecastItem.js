@@ -7,7 +7,20 @@ import TodayPrecipitation from './TodayPrecipitation';
 function ForecastItem({ time, temp, precipitation, weather_code }) {
     const iconUrl = getWeatherImage(weather_code, 1);
     return (
-        <Card sx={{ p: 2 }}>
+        <Card
+            sx={{
+                border: '1px solid rgba(0, 0, 0, 0.05)',
+                borderRadius: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                flexDirection: 'row',
+                flexWrap: 'nowrap',
+                '& > *': {
+                    margin: 0,
+                },
+                padding: '0.25rem 0'
+            }}
+        >
             <Box
                 sx={{
                     display: 'flex',

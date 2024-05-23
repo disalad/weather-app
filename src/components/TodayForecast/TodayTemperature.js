@@ -10,7 +10,10 @@ function TodayTemperature({ temp }) {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
             <ThermostatIcon />
-            <Typography>{`${temp} ${hourly_units.temperature_2m}`}</Typography>
+            <Typography
+                sx={{ paddingLeft: { xs: '0px', sm: '4px', md: '6px' } }}
+                variant='h4'
+            >{`${temp} ${hourly_units.temperature_2m}`}</Typography>
         </Box>
     );
 }

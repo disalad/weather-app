@@ -11,7 +11,10 @@ function TodayPrecipitation({ perc }) {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
             <ThunderstormIcon />
-            <Typography>{`${perc}${hourly_units.precipitation_probability}`}</Typography>
+            <Typography
+                sx={{ paddingLeft: { xs: '0px', sm: '4px', md: '6px' } }}
+                variant='h4'
+            >{`${perc}${hourly_units.precipitation_probability}`}</Typography>
         </Box>
     );
 }
