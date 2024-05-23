@@ -18,7 +18,7 @@ function Humidity() {
             <WeatherInfoTooltip type='Humidity' />
             <Typography
                 variant='h3'
-                sx={{ margin: 'auto' }}
+                sx={{ margin: 'auto', fontWeight: { xs: '400', sm: '600' } }}
             >{`${current.relative_humidity_2m} ${current_units.relative_humidity_2m}`}</Typography>
         </Box>
     );

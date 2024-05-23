@@ -16,7 +16,7 @@ function TodayForecast() {
                 alignItems: 'center',
             }}
         >
-            <Typography variant='h2' element='h2' sx={{ margin: '0 0 1rem' }}>
+            <Typography variant='h2' element='h2' sx={{ margin: { xs: 0, sm: '0 0 1rem' } }}>
                 TODAY&#39;S FORECAST
             </Typography>
             <Box
@@ -25,6 +25,8 @@ function TodayForecast() {
                     justifyContent: 'space-evenly',
                     flexDirection: 'row',
                     width: '100%',
+                    flexWrap: { xs: 'wrap', sm: 'nowrap' },
+                    gap: { xs: '1rem', sm: 'unset' },
                 }}
             >
                 {hourly.time.map((time, index) => {

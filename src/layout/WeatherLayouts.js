@@ -23,18 +23,18 @@ function WeatherLayouts() {
                         container
                         spacing={2}
                         sx={{
-                            maxWidth: { xs: '95%', sm: '80%', md: '1100px' },
+                            maxWidth: { xs: '100%', sm: '85%', md: '1100px' },
                             width: '100%',
                             height: '100%',
-                            margin: '0 auto',
-                            padding: '1rem 0 3rem',
+                            margin: { xs: '0 auto 2rem auto', md: '0 auto' },
+                            padding: '2rem 0 3rem',
                             borderRadius: {
                                 xs: 'none',
-                                sm: '0 0 1rem 1rem',
+                                sm: '1rem',
                             },
                             boxShadow: {
                                 xs: 'none',
-                                sm: 'rgba(0,0,0, 0.5) 0px 10px 15px -3px, rgba(0,0,0, 0.5) 0px 4px 6px -2px',
+                                sm: 'rgba(200, 200, 200, 0.3) 0px 1px 2px 0px, rgba(200, 200, 200, 0.15) 0px 1px 3px 1px',
                             },
                         }}
                     >
@@ -54,6 +54,9 @@ function WeatherLayouts() {
                             <DailyForecast />
                         </Grid>
                     </Grid>
+                    <Box
+                        sx={{ display: { xs: 'block', sm: 'block', md: 'none' }, height: '2rem' }}
+                    />
                 </Box>
             )}
         </>

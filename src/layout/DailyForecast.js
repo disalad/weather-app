@@ -18,7 +18,11 @@ function DailyForecast() {
                 alignItems: 'center',
             }}
         >
-            <Typography variant='h2' element='h2' sx={{ margin: '0 0 0.8rem' }}>
+            <Typography
+                variant='h2'
+                element='h2'
+                sx={{ margin: { xs: '3rem 0 1rem 0', sm: '3rem 0 1rem 0', md: '0 0 0.8rem' } }}
+            >
                 DAILY FORECAST
             </Typography>
             <Grid
@@ -29,9 +33,10 @@ function DailyForecast() {
                     justifyContent: 'center',
                     flexDirection: 'column',
                     width: '100%',
-                    paddingRight: '2rem',
+                    paddingRight: { xs: '0.65rem', sm: '0.65rem', md: '2rem' },
+                    paddingLeft: { xs: '0.65rem', sm: '0.65rem', md: '2rem' },
                 }}
-                gap='0.25rem'
+                gap={{ xs: '0.4rem', sm: '0.25rem' }}
             >
                 {daily.time.map((time, index) => {
                     const temp = daily.temperature_2m_max[index];

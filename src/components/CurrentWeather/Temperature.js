@@ -21,7 +21,7 @@ function Temperature() {
             <Typography
                 variant='h3'
                 sx={{
-                    fontWeight: '700',
+                    fontWeight: { xs: '500', sm: '700' },
                     textTransform: 'uppercase',
                     lineHeight: 1,
                     marginBottom: '0.5rem',

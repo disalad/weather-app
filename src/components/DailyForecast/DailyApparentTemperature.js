@@ -20,7 +20,10 @@ function DailyApparentTemperature({ temp }) {
             }}
         >
             <WbSunnyIcon />
-            <Typography variant='h4'>{`${temp} ${daily_units.apparent_temperature_max}`}</Typography>
+            <Typography
+                variant='h5'
+                sx={{ fontWeight: { xs: '400', sm: '500' }, fontSize: { xs: '13px', sm: '15px' } }}
+            >{`${temp} ${daily_units.apparent_temperature_max}`}</Typography>
         </Box>
     );
 }

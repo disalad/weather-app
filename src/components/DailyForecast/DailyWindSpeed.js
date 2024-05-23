@@ -20,7 +20,10 @@ function DailyWindSpeed({ perc }) {
             }}
         >
             <AirIcon />
-            <Typography variant='h4'>{`${perc}${daily_units.wind_speed_10m_max}`}</Typography>
+            <Typography
+                variant='h5'
+                sx={{ fontWeight: { xs: '400', sm: '500' }, fontSize: { xs: '13px', sm: '15px' } }}
+            >{`${perc}${daily_units.wind_speed_10m_max}`}</Typography>
         </Box>
     );
 }

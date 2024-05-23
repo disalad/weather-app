@@ -20,8 +20,12 @@ function DailyTemperature({ temp }) {
         >
             <ThermostatIcon />
             <Typography
-                variant='h4'
-                sx={{ fontWeight: { xs: '400', sm: '500' }, marginRight: '0.5rem' }}
+                variant='h5'
+                sx={{
+                    fontWeight: { xs: '400', sm: '500' },
+                    fontSize: { xs: '13px', sm: '15px' },
+                    marginRight: '0.5rem',
+                }}
             >{`${temp} ${daily_units.temperature_2m_max}`}</Typography>
         </Box>
     );
