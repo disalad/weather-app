@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import CircularProgress from '@mui/material/CircularProgress';
+import { GridSpinner } from 'react-spinners-kit';
 
 function LoadingScreen() {
     return (
@@ -12,7 +12,7 @@ function LoadingScreen() {
                 justifyContent: 'center',
             }}
         >
-            <CircularProgress />
+            <GridSpinner />
         </Box>
     );
 }
