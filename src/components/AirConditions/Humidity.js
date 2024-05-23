@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
-import WaterDropOutlinedIcon from '@mui/icons-material/WaterDropOutlined';
 import { useContext } from 'react';
 import { WeatherContext } from 'context/WeatherContext';
+import WeatherInfoTooltip from 'components/AirConditions/WeatherInfoTooltip ';
 
 function Humidity() {
     const {
@@ -15,20 +15,11 @@ function Humidity() {
                 justifyContent: 'space-evenly',
             }}
         >
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'space-evenly',
-                    alignItems: 'center',
-                }}
-            >
-                <WaterDropOutlinedIcon />
-                <Typography>Humidity</Typography>
-            </Box>
-            <Box
+            <WeatherInfoTooltip type='Humidity' />
+            <Typography
+                variant='h4'
                 sx={{ margin: 'auto' }}
-            >{`${current.relative_humidity_2m} ${current_units.relative_humidity_2m}`}</Box>
+            >{`${current.relative_humidity_2m} ${current_units.relative_humidity_2m}`}</Typography>
         </Box>
     );
 }

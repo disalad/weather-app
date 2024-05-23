@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
-import AirIcon from '@mui/icons-material/Air';
 import { useContext } from 'react';
 import { WeatherContext } from 'context/WeatherContext';
+import WeatherInfoTooltip from 'components/AirConditions/WeatherInfoTooltip ';
 
 function WindSpeed() {
     const {
@@ -15,20 +15,11 @@ function WindSpeed() {
                 justifyContent: 'space-evenly',
             }}
         >
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'space-evenly',
-                    alignItems: 'center',
-                }}
-            >
-                <AirIcon />
-                <Typography>Wind</Typography>
-            </Box>
-            <Box
+            <WeatherInfoTooltip type='Wind' />
+            <Typography
+                variant='h4'
                 sx={{ margin: 'auto' }}
-            >{`${current.wind_speed_10m} ${current_units.wind_speed_10m}`}</Box>
+            >{`${current.wind_speed_10m} ${current_units.wind_speed_10m}`}</Typography>
         </Box>
     );
 }

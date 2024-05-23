@@ -13,7 +13,9 @@ function AirConditions() {
                 alignItems: 'center',
             }}
         >
-            <Typography element='h2'>Air Conditions</Typography>
+            <Typography variant='h2' element='h2' sx={{ margin: '0 0 0.8rem' }}>
+                AIR CONDITIONS
+            </Typography>
             <Box
                 sx={{
                     display: 'flex',

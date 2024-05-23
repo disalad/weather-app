@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import CloudQueueIcon from '@mui/icons-material/CloudQueue';
+import WeatherInfoTooltip from 'components/AirConditions/WeatherInfoTooltip ';
 import { useContext } from 'react';
 import { WeatherContext } from 'context/WeatherContext';
 
@@ -15,20 +15,11 @@ function CloudCover() {
                 justifyContent: 'space-evenly',
             }}
         >
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'space-evenly',
-                    alignItems: 'center',
-                }}
-            >
-                <CloudQueueIcon />
-                <Typography>Clouds</Typography>
-            </Box>
-            <Box
+            <WeatherInfoTooltip type='Clouds' />
+            <Typography
+                variant='h4'
                 sx={{ margin: 'auto' }}
-            >{`${current.cloud_cover} ${current_units.cloud_cover}`}</Box>
+            >{`${current.cloud_cover} ${current_units.cloud_cover}`}</Typography>
         </Box>
     );
 }
