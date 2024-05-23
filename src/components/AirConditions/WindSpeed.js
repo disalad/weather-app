@@ -17,7 +17,7 @@ function WindSpeed() {
         >
             <WeatherInfoTooltip type='Wind' />
             <Typography
-                variant='h4'
+                variant='h3'
                 sx={{ margin: 'auto' }}
             >{`${current.wind_speed_10m} ${current_units.wind_speed_10m}`}</Typography>
         </Box>

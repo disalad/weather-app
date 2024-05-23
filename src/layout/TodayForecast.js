@@ -16,7 +16,9 @@ function TodayForecast() {
                 alignItems: 'center',
             }}
         >
-            <Typography element='h2'>Today&#39;s Forecast</Typography>
+            <Typography variant='h2' element='h2' sx={{ margin: '0 0 0.8rem' }}>
+                TODAY&#39;S FORECAST
+            </Typography>
             <Box
                 sx={{
                     display: 'flex',

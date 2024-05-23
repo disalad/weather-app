@@ -11,6 +11,7 @@ function AirConditions() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                margin: '0 0 2.5rem',
             }}
         >
             <Typography variant='h2' element='h2' sx={{ margin: '0 0 0.8rem' }}>

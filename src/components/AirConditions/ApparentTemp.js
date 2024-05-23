@@ -17,7 +17,7 @@ function Temperature() {
         >
             <WeatherInfoTooltip type='Real Feel' />
             <Typography
-                variant='h4'
+                variant='h3'
                 sx={{ margin: 'auto' }}
             >{`${current.apparent_temperature} ${current_units.apparent_temperature}`}</Typography>
         </Box>

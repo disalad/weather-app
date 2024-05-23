@@ -25,6 +25,7 @@ function DailyForecastItem({ time, temp, apparent_temp, precipitation, weather_c
                 '& > *': {
                     margin: 0,
                 },
+                padding: '0.25rem 0'
             }}
         >
             <Grid
@@ -37,13 +38,13 @@ function DailyForecastItem({ time, temp, apparent_temp, precipitation, weather_c
                     marginRight: 2,
                 }}
             >
-                <Typography component='h4' variant='h4' sx={{ marginRight: 1 }}>
+                <Typography component='h4' variant='h4' sx={{ margin: '0.1rem 1rem 0' }}>
                     {getDayOfWeek(time)}
                 </Typography>
                 <img
                     src={iconUrl}
                     alt=''
-                    style={{ marginRight: 1, height: '2.35rem', width: '2.35rem' }}
+                    style={{ marginRight: 1, height: '2.1rem', width: '2.1rem' }}
                 />
             </Grid>
             <Grid

@@ -17,7 +17,7 @@ function CloudCover() {
         >
             <WeatherInfoTooltip type='Clouds' />
             <Typography
-                variant='h4'
+                variant='h3'
                 sx={{ margin: 'auto' }}
             >{`${current.cloud_cover} ${current_units.cloud_cover}`}</Typography>
         </Box>

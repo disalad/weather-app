@@ -31,7 +31,7 @@ function DailyForecast() {
                     width: '100%',
                     paddingRight: '2rem',
                 }}
-                gap='0.2rem'
+                gap='0.25rem'
             >
                 {daily.time.map((time, index) => {
                     const temp = daily.temperature_2m_max[index];

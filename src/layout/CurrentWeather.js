@@ -12,7 +12,7 @@ const StyledGridItem = ({ children }) => (
                 justifyContent: 'center',
                 alignItems: 'center',
                 textAlign: 'center',
-                height: '100%',
+                height: '5rem',
             }}
         >
             {children}
@@ -27,11 +27,12 @@ function CurrentWeather() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                margin: '0 0 2.5rem',
             }}
         >
             <Grid container spacing={2}>
                 <Grid item xs={12}>
-                    <Typography variant='h2' sx={{ textAlign: 'center' }}>
+                    <Typography variant='h2' sx={{ textAlign: 'center', margin: '0 0 0.8rem' }}>
                         CURRENT WEATHER
                     </Typography>
                 </Grid>
