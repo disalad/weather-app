@@ -8,7 +8,6 @@ function DailyForecast() {
     const {
         weatherData: { daily },
     } = useContext(WeatherContext);
-    console.log(daily.time);
 
     return (
         <Grid

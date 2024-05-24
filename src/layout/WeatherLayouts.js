@@ -7,13 +7,16 @@ import { Box, Grid } from '@mui/material';
 import { WeatherContext } from 'context/WeatherContext';
 import { useContext } from 'react';
 import GithubIcon from 'components/Layout/GithubIcon';
+import ErrorBox from 'components/Layout/ErrorBox';
 
 function WeatherLayouts() {
-    const { loading } = useContext(WeatherContext);
+    const { weatherData, loading, error } = useContext(WeatherContext);
     return (
         <>
             {loading ? (
                 <LoadingScreen />
+            ) : error || !weatherData.current ? (
+                <ErrorBox message={error} />
             ) : (
                 <Box
                     sx={{
@@ -22,7 +25,6 @@ function WeatherLayouts() {
                 >
                     <Grid
                         container
-                        // spacing={2}
                         sx={{
                             maxWidth: { xs: '100%', sm: '85%', md: '1100px' },
                             width: '100%',

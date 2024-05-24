@@ -4,10 +4,10 @@ import { useWeatherData } from 'hooks/useWeatherData';
 export const WeatherContext = createContext();
 
 export function WeatherProvider({ children }) {
-    const { weatherData, loading } = useWeatherData();
+    const { weatherData, loading, error } = useWeatherData();
 
     return (
-        <WeatherContext.Provider value={{ weatherData, loading }} style={{ height: '100%' }}>
+        <WeatherContext.Provider value={{ weatherData, loading, error }} style={{ height: '100%' }}>
             {children}
         </WeatherContext.Provider>
     );

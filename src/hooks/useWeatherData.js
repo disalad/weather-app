@@ -4,6 +4,7 @@ import axios from 'axios';
 export function useWeatherData() {
     const [weatherData, setWeatherData] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     const apiUrl = 'https://api.open-meteo.com/v1/forecast';
     let params;
@@ -48,34 +49,40 @@ export function useWeatherData() {
 
                 const { latitude, longitude } = position.coords;
                 let city;
-                try {
-                    const response = await axios.get('https://us1.locationiq.com/v1/reverse.php', {
-                        params: {
-                            // eslint-disable-next-line no-undef
-                            key: process.env.REACT_APP_API_KEY,
-                            lat: latitude,
-                            lon: longitude,
-                            format: 'json',
-                        },
-                    });
-                    const data = response.data;
 
+                try {
+                    const response = await axios.get(
+                        'https://us1.locationiq.com/v1/reverse.php',
+                        {
+                            params: {
+                                // eslint-disable-next-line no-undef
+                                key: process.env.REACT_APP_API_KEY,
+                                lat: latitude,
+                                lon: longitude,
+                                format: 'json',
+                            },
+                        }
+                    );
+                    const data = response.data;
                     city = data?.address?.city;
                 } catch (err) {
-                    console.error('Error:', err);
+                    console.error('Error in reverse geocoding:', err);
+                    // setError('External API Error');
                 }
 
                 return {
                     latitude,
                     longitude,
-                    city,
+                    city: city || null,
                 };
-            } catch (error) {
-                console.error('Error:', error);
+            } catch (err) {
+                console.error('Error in geolocation:', err);
+                setError('Error in geolocation API');
                 return null;
             }
         } else {
             console.error('Geolocation is not supported');
+            setError('Geolocation is not supported');
             return null;
         }
     };
@@ -89,10 +96,11 @@ export function useWeatherData() {
 
             // Set user's city to the weather data object
             const data = response.data;
-            data.city = city;
+            data.city = city || null;
             setWeatherData(response.data);
         } catch (err) {
-            console.error(err);
+            console.error('Error:', err);
+            setError('Unable to fetch weather data');
         } finally {
             setLoading(false);
         }
@@ -103,5 +111,5 @@ export function useWeatherData() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    return { weatherData, loading };
+    return { weatherData, loading, error };
 }
