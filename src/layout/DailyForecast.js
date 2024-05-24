@@ -1,7 +1,8 @@
-import { Typography, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import DailyForecastItem from 'components/DailyForecast/DailyForecastItem';
 import { useContext } from 'react';
 import { WeatherContext } from 'context/WeatherContext';
+import SectionHeader from 'components/Layout/SectionHeader';
 
 function DailyForecast() {
     const {
@@ -18,13 +19,7 @@ function DailyForecast() {
                 alignItems: 'center',
             }}
         >
-            <Typography
-                variant='h2'
-                element='h2'
-                sx={{ margin: { xs: '3rem 0 1rem 0', sm: '3rem 0 1rem 0', md: '0 0 0.8rem' } }}
-            >
-                DAILY FORECAST
-            </Typography>
+            <SectionHeader title='Daily Forecast' />
             <Grid
                 container
                 xs={12}
@@ -33,8 +28,8 @@ function DailyForecast() {
                     justifyContent: 'center',
                     flexDirection: 'column',
                     width: '100%',
-                    paddingRight: { xs: '0.65rem', sm: '0.65rem', md: '2rem' },
-                    paddingLeft: { xs: '0.65rem', sm: '0.65rem', md: '2rem' },
+                    paddingRight: { xs: '0', sm: '0.65rem', md: '2rem' },
+                    paddingLeft: { xs: '0', sm: '0.65rem', md: '2rem' },
                 }}
                 gap={{ xs: '0.4rem', sm: '0.25rem' }}
             >

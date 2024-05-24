@@ -23,7 +23,7 @@ function DailyTemperature({ temp }) {
                 variant='h5'
                 sx={{
                     fontWeight: { xs: '400', sm: '500' },
-                    fontSize: { xs: '13px', sm: '15px' },
+                    fontSize: { xs: '12px', sm: '13px' },
                     marginRight: '0.5rem',
                 }}
             >{`${temp} ${daily_units.temperature_2m_max}`}</Typography>

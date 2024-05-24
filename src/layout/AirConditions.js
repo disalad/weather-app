@@ -1,8 +1,9 @@
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import ApparentTemp from 'components/AirConditions/ApparentTemp';
 import WindSpeed from 'components/AirConditions/WindSpeed';
 import CloudCover from 'components/AirConditions/CloudCover';
 import Humidity from 'components/AirConditions/Humidity';
+import SectionHeader from 'components/Layout/SectionHeader';
 
 function AirConditions() {
     return (
@@ -14,9 +15,7 @@ function AirConditions() {
                 margin: '0 0 3rem',
             }}
         >
-            <Typography variant='h2' element='h2' sx={{ margin: '0 0 0.8rem' }}>
-                AIR CONDITIONS
-            </Typography>
+            <SectionHeader title='Air Conditions' />
             <Box
                 sx={{
                     display: 'flex',

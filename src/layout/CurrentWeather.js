@@ -1,7 +1,8 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import TimeZone from 'components/CurrentWeather/TimeZone';
 import Temperature from 'components/CurrentWeather/Temperature';
 import WeatherIcon from 'components/CurrentWeather/WeatherIcon';
+import SectionHeader from 'components/Layout/SectionHeader';
 
 const StyledGridItem = ({ children }) => (
     <Grid item xs={4}>
@@ -32,9 +33,7 @@ function CurrentWeather() {
         >
             <Grid container spacing={2}>
                 <Grid item xs={12}>
-                    <Typography variant='h2' sx={{ textAlign: 'center', margin: '0 0 0.8rem' }}>
-                        CURRENT WEATHER
-                    </Typography>
+                    <SectionHeader title="Current Weather" />
                 </Grid>
                 <Grid item xs={12}>
                     <Grid container spacing={2}>

@@ -11,9 +11,12 @@ function WeatherIcon() {
     const iconUrl = getWeatherImage(current.weather_code, current.is_day);
 
     return (
-        <Box>
-            <img src={iconUrl} alt='Weather Icon' />
-        </Box>
+        <Box
+            component='img'
+            src={iconUrl}
+            alt='Weather Icon'
+            sx={{ width: { xs: '50px', sm: '60px', md: '80px', lg: 'unset' } }}
+        />
     );
 }
 

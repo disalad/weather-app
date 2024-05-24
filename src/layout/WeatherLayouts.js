@@ -16,12 +16,12 @@ function WeatherLayouts() {
             ) : (
                 <Box
                     sx={{
-                        flexGrow: 1,
+                        flex: '1 1 100%',
                     }}
                 >
                     <Grid
                         container
-                        spacing={2}
+                        // spacing={2}
                         sx={{
                             maxWidth: { xs: '100%', sm: '85%', md: '1100px' },
                             width: '100%',

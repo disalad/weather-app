@@ -14,12 +14,18 @@ const theme = createTheme({
         },
         h3: {
             fontSize: '1rem',
-            fontWeight: { xs: '400', sm: '600' },
+            fontWeight: 400,
+            '@media (min-width:600px)': {
+                fontWeight: 600,
+            },
         },
         h4: {
             fontSize: '0.95rem',
             fontWeight: 500,
-            letterSpacing: { xs: '1px', sm: '0' },
+            letterSpacing: '1px',
+            '@media (min-width:600px)': {
+                letterSpacing: 0,
+            },
             color: 'rgb(255, 255, 255, 0.7)',
         },
         h5: {
@@ -40,7 +46,7 @@ const theme = createTheme({
         MuiSvgIcon: {
             styleOverrides: {
                 root: {
-                    fontSize: '1.2em',
+                    fontSize: '18px',
                     color: 'rgb(255, 255, 255, 0.7)',
                 },
             },
@@ -52,7 +58,18 @@ const theme = createTheme({
                     margin: 0,
                     fontFamily: 'Poppins, Arial, sans-serif',
                     color: '#ffffff',
-                    padding: '2.5rem 2rem',
+                    whiteSpace: 'nowrap !important',
+                    height: '100%',
+                    padding: '2.5rem 0.5rem',
+                    '@media (min-width:600px)': {
+                        padding: '2.5rem 2rem',
+                    },
+                },
+                html: {
+                    height: '100%',
+                },
+                '#root': {
+                    height: '100%',
                 },
             },
         },

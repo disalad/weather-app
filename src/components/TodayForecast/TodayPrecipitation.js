@@ -9,12 +9,18 @@ function TodayPrecipitation({ perc }) {
     } = useContext(WeatherContext);
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-            <ThunderstormIcon />
+        <Box
+            sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', flexWrap: 'nowrap' }}
+        >
+            <ThunderstormIcon
+                sx={{
+                    display: { xs: 'none', sm: 'block' },
+                }}
+            />
             <Typography
                 sx={{
                     fontWeight: { xs: '400', sm: '500' },
-                    fontSize: { xs: '13px', sm: '15px' },
+                    fontSize: { xs: '12px', sm: '14px' },
                     paddingLeft: { xs: '0px', sm: '4px', md: '6px' },
                 }}
                 variant='h5'

@@ -43,15 +43,20 @@ function DailyForecastItem({ time, temp, apparent_temp, precipitation, weather_c
                     sx={{
                         margin: '0.1rem 1rem 0',
                         fontWeight: { xs: '400', sm: '500' },
-                        fontSize: { xs: '13px', sm: '15px' },
+                        fontSize: { xs: '12px', sm: '13px', md: '14px' },
                     }}
                 >
                     {getDayOfWeek(time)}
                 </Typography>
-                <img
+                <Box
+                    component='img'
                     src={iconUrl}
                     alt=''
-                    style={{ marginRight: 1, height: '2.1rem', width: '2.1rem' }}
+                    sx={{
+                        marginRight: 1,
+                        height: '2.1rem',
+                        width: { xs: '24px', sm: '28px', md: '31px' },
+                    }}
                 />
             </Grid>
             <Grid

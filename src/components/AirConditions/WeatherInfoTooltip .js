@@ -23,7 +23,13 @@ export default function WeatherInfoTooltip({ type }) {
             }}
         >
             {icon}
-            <Typography variant='h4' sx={{ paddingLeft: { xs: '0px', sm: '4px', md: '6px' } }}>
+            <Typography
+                variant='h4'
+                sx={{
+                    paddingLeft: { xs: '0px', sm: '4px', md: '6px' },
+                    fontSize: { xs: '10px', sm: '12px', md: '14px' },
+                }}
+            >
                 {type}
             </Typography>
         </Box>

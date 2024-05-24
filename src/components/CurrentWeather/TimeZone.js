@@ -21,6 +21,7 @@ function TimeZone() {
             <Typography
                 variant='h3'
                 sx={{
+                    fontSize: { xs: '12px', sm: '14px', md: '16px' },
                     fontWeight: { xs: '500', sm: '700' },
                     textTransform: 'uppercase',
                     lineHeight: 1,
@@ -29,7 +30,9 @@ function TimeZone() {
             >
                 {city}
             </Typography>
-            <Typography variant='h4'>{formattedDate}</Typography>
+            <Typography variant='h4' sx={{ fontSize: { xs: '10px', sm: '12px', md: '14px' } }}>
+                {formattedDate}
+            </Typography>
         </Box>
     );
 }
