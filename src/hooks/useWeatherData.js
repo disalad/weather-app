@@ -40,15 +40,43 @@ export function useWeatherData() {
     };
 
     const getLocation = async () => {
-        const res = await axios.get('http://ip-api.com/json');
-        if (res.status === 200) {
-            const locationData = res.data;
-            console.warn(res.data);
-            return {
-                latitude: locationData?.lat,
-                longitude: locationData?.lon,
-                city: locationData?.city,
-            };
+        if ('geolocation' in navigator) {
+            try {
+                const position = await new Promise((resolve, reject) => {
+                    navigator.geolocation.getCurrentPosition(resolve, reject);
+                });
+
+                const { latitude, longitude } = position.coords;
+                let city;
+                try {
+                    const response = await axios.get('https://us1.locationiq.com/v1/reverse.php', {
+                        params: {
+                            // eslint-disable-next-line no-undef
+                            key: process.env.REACT_APP_API_KEY,
+                            lat: latitude,
+                            lon: longitude,
+                            format: 'json',
+                        },
+                    });
+                    const data = response.data;
+
+                    city = data?.address?.city;
+                } catch (err) {
+                    console.error('Error:', err);
+                }
+
+                return {
+                    latitude,
+                    longitude,
+                    city,
+                };
+            } catch (error) {
+                console.error('Error:', error);
+                return null;
+            }
+        } else {
+            console.error('Geolocation is not supported');
+            return null;
         }
     };
 

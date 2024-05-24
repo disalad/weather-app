@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme';
 
 function App() {
+    // console.log(process.env);
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
