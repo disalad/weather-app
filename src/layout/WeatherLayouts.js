@@ -6,6 +6,7 @@ import LoadingScreen from 'components/Layout/LoadingScreen';
 import { Box, Grid } from '@mui/material';
 import { WeatherContext } from 'context/WeatherContext';
 import { useContext } from 'react';
+import GithubIcon from 'components/Layout/GithubIcon';
 
 function WeatherLayouts() {
     const { loading } = useContext(WeatherContext);
@@ -36,8 +37,10 @@ function WeatherLayouts() {
                                 xs: 'none',
                                 sm: 'rgba(200, 200, 200, 0.3) 0px 1px 2px 0px, rgba(200, 200, 200, 0.15) 0px 1px 3px 1px',
                             },
+                            position: 'relative',
                         }}
                     >
+                        <GithubIcon />
                         <Grid
                             item
                             xs={12}
